@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>{% block title %}Biblioteca Django{% endblock %}</title>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+</head>
+<body>
+	<header class="bg-dark text-white p-3 text-center">
+		<h1>Sistema de Biblioteca</h1>
+		<nav>
+			<a href="{% url 'app:inicio' %}" class="text-white me-3">Inicio</a>
+			<a href="{% url 'app:lista_libros' %}" class="text-white me-3">Libros</a>
+			<a href="{% url 'app:lista_alumnos' %}" class="text-white">Alumnos</a>
+            <a href="{% url 'app:panel_general' %}" class="text-white">Panel general</a>
+		</nav>
+	</header>
+	<main class="container mt-4">
+		{% block content %}{% endblock %}
+	</main>
+	<footer class="bg-light text-center py-3 mt-4">
+		<p>&copy; {{ year }} Biblioteca Django</p>
+	</footer>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

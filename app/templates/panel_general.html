@@ -1,0 +1,20 @@
+{% extends 'plantilla.html' %}
+{% block title %}Panel general{% endblock %}
+
+{% block content %}
+<h2>Panel general</h2>
+<p>Cantidad de libros disponibles: <strong>{{ libros_disponibles }}</strong></p>
+<p>Promedio de edad de los alumnos: <strong>{% if promedio_edad %}{{ promedio_edad|floatformat:1 }}{% else %}N/A{% endif %}</strong></p>
+
+<h3>Últimos 3 libros</h3>
+<ul class="list-group">
+    {% for libro in ultimos_tres %}
+    <li class="list-group-item">
+        <strong>{{ libro.titulo }}</strong> — {{ libro.autor }} ({{ libro.anio_publicacion }})
+    </li>
+    {% empty %}
+    <li class="list-group-item">No hay libros registrados.</li>
+    {% endfor %}
+</ul>
+
+{% endblock %}

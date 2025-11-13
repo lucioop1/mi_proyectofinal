@@ -1,0 +1,27 @@
+{% extends 'plantilla.html' %}
+{% block title %}Lista de Libros{% endblock %}
+{% block content %}
+<h2>Listado de Libros</h2>
+<table class="table table-striped">
+	<thead>
+		<tr>
+			<th>Título</th>
+			<th>Autor</th>
+			<th>Año</th>
+			<th>Disponible</th>
+		</tr>
+	</thead>
+	<tbody>
+	{% for libro in libros %}
+		<tr>
+			<td>{{ libro.titulo }}</td>
+			<td>{{ libro.autor }}</td>
+			<td>{{ libro.anio_publicacion }}</td>
+			<td>{{ libro.disponible|yesno:"Sí,No" }}</td>
+		</tr>
+	{% empty %}
+		<tr><td colspan="4">No hay libros registrados.</td></tr>
+	{% endfor %}
+	</tbody>
+</table>
+{% endblock %}

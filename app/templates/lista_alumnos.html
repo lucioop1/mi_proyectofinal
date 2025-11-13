@@ -1,0 +1,25 @@
+{% extends 'plantilla.html' %}
+{% block title %}Lista de Alumnos{% endblock %}
+{% block content %}
+<h2>Listado de Alumnos</h2>
+<table class="table table-striped">
+	<thead>
+		<tr>
+			<th>Nombre</th>
+			<th>Curso</th>
+			<th>Edad</th>
+		</tr>
+	</thead>
+	<tbody>
+	{% for alumno in alumnos %}
+		<tr>
+			<td>{{ alumno.nombre }}</td>
+			<td>{{ alumno.curso }}</td>
+			<td>{{ alumno.edad }}</td>
+		</tr>
+	{% empty %}
+		<tr><td colspan="3">No hay alumnos registrados.</td></tr>
+	{% endfor %}
+	</tbody>
+</table>
+{% endblock %}
