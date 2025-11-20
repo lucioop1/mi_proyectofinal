@@ -20,6 +20,5 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    # Incluir las URLs de la app con namespace 'app' para poder usar {% url 'app:...' %}
-    path('', include(('app.urls', 'app'), namespace='app')),
+    path('', include('app.urls')),  # esto es crítico
 ]
