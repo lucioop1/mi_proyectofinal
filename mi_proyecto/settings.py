@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-w52#&e%v_aow4k4x)$8br^tlxc71=z4)6f7h(0x45mq8hh!c)h
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['opsdkfg.pythonanywhere.com/']
+ALLOWED_HOSTS = ['opsdkfg.pythonanywhere.com/', 'www.luciopirez.com']
 os.environ['DJANGO_SETTINGS_MODULE'] = 'mi_proyectofinal.settings'
 
 
